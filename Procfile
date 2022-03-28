@@ -1,4 +1,4 @@
-bot: python main.py
+web: python main.py
 comedy.txt
 cartoon.txt
 drama.txt
