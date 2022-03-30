@@ -1,4 +1,4 @@
-bot: python main.py
+worker: python Main.py
 comedy.txt
 cartoon.txt
 drama.txt
