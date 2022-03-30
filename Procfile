@@ -1,4 +1,4 @@
-bot: python Main.py
+bot: python main.py
 comedy.txt
 cartoon.txt
 drama.txt
