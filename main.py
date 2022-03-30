@@ -33,7 +33,7 @@ def add_users(update, context):
             wall.close()
 
 def start(update, context):
-    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬', 'Подобрать фильм 🤔', 'Оставить отзыв ✍']]
+    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬'], ['Подобрать фильм 🤔', 'Оставить отзыв ✍']]
     
     update.message.reply_text("*Пройдите опрос для подбора фильма*", parse_mode = 'Markdown', reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))
 
