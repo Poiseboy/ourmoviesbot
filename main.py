@@ -33,7 +33,7 @@ def add_users(update, context):
             wall.close()
 
 def start(update, context):
-    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬'], ['Подобрать фильм 🤔', 'Оставить отзыв ✍']]
+    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬'], ['Подобрать фильм 🤔', 'Оставить отзыв ✍'], ['Поддержать автора ⭐']]
     
     update.message.reply_text("*Пройдите опрос для подбора фильма*", parse_mode = 'Markdown', reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))
 
@@ -67,7 +67,7 @@ def start(update, context):
 
 #Функция для подбора фильма, когда юзер нажимает на кнопку "Подобрать фильм"
 def answer(update, context):
-    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬'], ['Подобрать фильм 🤔', 'Оставить отзыв ✍']]
+    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬'], ['Подобрать фильм 🤔', 'Оставить отзыв ✍'], ['Поддержать автора ⭐']]
     
     update.message.reply_text("*Пройдите опрос для подбора фильма*", parse_mode = 'Markdown', reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))
     
@@ -142,6 +142,8 @@ def message(update, context):
     if update.message.text == "Оставить отзыв ✍":
         context.bot.send_message(update.effective_chat.id, "Напишите ваш отзыв в сообщении боту по образцу: /add + Ваш комменатрий")
 #         add(update, context)
+    if update.message.text == "Поддержать автора ⭐":
+        context.bot.send_message(update.effective_chat.id, "Ссылка на донатный кошелёк \n t.me/CryptoBot?start=IVIfoMuwIsVO")
 
 def genre_from_file(genre):
     fileObj = codecs.open( genre, "r", "utf_8_sig" )
