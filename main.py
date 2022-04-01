@@ -143,7 +143,14 @@ def message(update, context):
         context.bot.send_message(update.effective_chat.id, "Напишите ваш отзыв в сообщении боту по образцу: /add + Ваш комменатрий")
 #         add(update, context)
     if update.message.text == "Поддержать автора ⭐":
-        context.bot.send_message(update.effective_chat.id, "Ссылка на донатный кошелёк \n t.me/CryptoBot?start=IVIfoMuwIsVO")
+#         context.bot.send_message(update.effective_chat.id, "Ссылка на донатный кошелёк \n t.me/CryptoBot?start=IVIfoMuwIsVO")
+        donate(update, context)
+
+def donate(update, context):
+    donate_keyboard = [[InlineKeyboardButton('QR код TON кошелька', callback_data='10'), InlineKeyboardButton('Адрес TON кошелька', callback_data='20')],
+                [InlineKeyboardButton('Донат через Crypto Bot', callback_data='30')]]
+
+    update.message.reply_text('Выберите интересующий вас способ доната', reply_markup = InlineKeyboardMarkup(donate_keyboard))
 
 def genre_from_file(genre):
     fileObj = codecs.open( genre, "r", "utf_8_sig" )
@@ -166,8 +173,12 @@ def button(update, context):
             context.bot.send_message(update.effective_chat.id, genre_from_file('gangster_movie.txt'))
     elif query.data == '6':
             context.bot.send_message(update.effective_chat.id, genre_from_file('drama.txt'))
-    else:
-        context.bot.send_message(update.effective_chat.id, "Пока что нет такого жанра")
+    elif query.data == '10':
+        context.bot.send_photo(update.effective_chat.id, photo = open("QR_TON.jpg", 'rb'))
+    elif query.data == '20':
+        context.bot.send_message(update.effective_chat.id, "EQDLCrfveKsrvFvgPzJA0rX1nw49hBrsFO-g5LtdFiEvapxU")
+    elif query.data == '30':
+        context.bot.send_message(update.effective_chat.id, "t.me/CryptoBot?start=IVIfoMuwIsVO")
 
 def new(update, context):
     context.bot.send_message(update.effective_chat.id, "*Доктор Стрэндж: В мультивселенной безумия* - 04.05.2022\
