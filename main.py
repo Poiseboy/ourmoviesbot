@@ -29,7 +29,7 @@ def add_users(update, context):
         if search_word in open('users.txt').read():
             wall.close()
         else:
-            wall.write(str(update.message.from_user.id) + '\n')
+            wall.write(str(update.message.from_user.id) + ' ' + str(update.message.from_user['username']) + '\n')
             wall.close()
 
 def start(update, context):
