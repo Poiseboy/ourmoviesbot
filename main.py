@@ -124,7 +124,7 @@ def receive_poll_answer(update, context):
   
 
 def genre(update, context):
-    keyboard = [[InlineKeyboardButton('Ужасы 😨', callback_data='1'), InineKeyboardButton('Триллер 🔪', callback_data='2')],
+    keyboard = [[InlineKeyboardButton('Ужасы 😨', callback_data='1'), InlineKeyboardButton('Триллер 🔪', callback_data='2')],
                 [InlineKeyboardButton('Комедии 😀', callback_data='3'), InlineKeyboardButton('Мультфильмы 🧸', callback_data='4')],
                 [InlineKeyboardButton('Гангстеры\n 🚬', callback_data='5'), InlineKeyboardButton('Драма 😭', callback_data='6')]]
 
