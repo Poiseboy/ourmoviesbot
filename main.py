@@ -124,7 +124,7 @@ def receive_poll_answer(update, context):
   
 
 def genre(update, context):
-    keyboard = [[InlineKeyboardButton('Ужасы 😨', callback_data='1'), InlineKeyboardButton('Триллер 🔪', callback_data='2')],
+    keyboard = [[InlineKeyboardButton('Ужасы 😨', callback_data='1'), InineKeyboardButton('Триллер 🔪', callback_data='2')],
                 [InlineKeyboardButton('Комедии 😀', callback_data='3'), InlineKeyboardButton('Мультфильмы 🧸', callback_data='4')],
                 [InlineKeyboardButton('Гангстеры\n 🚬', callback_data='5'), InlineKeyboardButton('Драма 😭', callback_data='6')]]
 
@@ -147,8 +147,8 @@ def message(update, context):
         donate(update, context)
 
 def donate(update, context):
-    donate_keyboard = [[InlineKeyboardButton('QR код TON кошелька', callback_data='10'), InlineKeyboardButton('Адрес TON кошелька', callback_data='20')],
-                [InlineKeyboardButton('Донат через Crypto Bot', callback_data='30')]]
+    donate_keyboard = [[InlineKeyboardButton('QR код TON кошелька', callback_data='10',), InlineKeyboardButton('Адрес TON кошелька', callback_data='20')],
+                [InlineKeyboardButton('Донат через Crypto Bot', callback_data='30'), InlineKeyboardButton('Сбербанк', callback_data='40')]]
 
     update.message.reply_text('Выберите интересующий вас способ доната', reply_markup = InlineKeyboardMarkup(donate_keyboard))
 
@@ -179,6 +179,8 @@ def button(update, context):
         context.bot.send_message(update.effective_chat.id, "EQDLCrfveKsrvFvgPzJA0rX1nw49hBrsFO-g5LtdFiEvapxU")
     elif query.data == '30':
         context.bot.send_message(update.effective_chat.id, "t.me/CryptoBot?start=IVIfoMuwIsVO")
+    elif query.data == '40':
+        context.bot.send_message(update.effective_chat.id, "5228 6005 4890 6629")
 
 def new(update, context):
     context.bot.send_message(update.effective_chat.id, "*Доктор Стрэндж: В мультивселенной безумия* - 04.05.2022\
