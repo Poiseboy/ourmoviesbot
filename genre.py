@@ -94,6 +94,8 @@ drama = ["*1+1* - https://jetfilm.club/catalog/neprikasaemye-1-1-2011-smotret-on
 horror = ["*Визит* https://jetfilm.club/catalog/vizit-2015-smotret-onlayn-838043",
 
 "*Астрал* - https://jetfilm.club/catalog/astral-2011-smotret-onlayn-495892",
+          
+"*Время* - http://ab.lordfilms-s.tv/53630-film-vremja-2021.html",
 
 "*Время тьмы* - https://jetfilm.club/catalog/vremya-tmy-2006-smotret-onlayn-195986",
 
@@ -153,7 +155,9 @@ thriller = ["*Дом, который построил Джек* - https://jetfil
 "*Честная игра* - https://jetfilm.club/catalog/chestnaya-igra-2006-smotret-onlayn-196009"]
 
 
-biography = ["*1+1* - https://jetfilm.club/catalog/neprikasaemye-1-1-2011-smotret-onlayn-535341", 
+biography = ["*1+1* - https://jetfilm.club/catalog/neprikasaemye-1-1-2011-smotret-onlayn-535341",
+             
+"*Угроза для общества* - https://ru.jetfilm.club/catalog/ugroza-dlya-obshchestva-1993-smotret-onlayn-3791",
 
 "*Зелёная миля* - https://jetfilm.club/catalog/zelenaya-milya-1999-smotret-onlayn-435",
 
