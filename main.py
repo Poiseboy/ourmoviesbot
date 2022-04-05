@@ -141,6 +141,8 @@ def message(update, context):
         answer(update, context)
     if update.message.text == "Оставить отзыв ✍":
         context.bot.send_message(update.effective_chat.id, "Напишите ваш отзыв в сообщении боту по образцу: /add + Ваш комменатрий")
+        context.bot.send_message(update.effective_chat.id, "Или заполните анкету-отзыв ниже⬇")
+        context.bot.send_message(update.effective_chat.id, "https://forms.gle/qt5LDSL6ogm2iFBJA")
 #         add(update, context)
     if update.message.text == "Поддержать автора ⭐":
 #         context.bot.send_message(update.effective_chat.id, "Ссылка на донатный кошелёк \n t.me/CryptoBot?start=IVIfoMuwIsVO")
