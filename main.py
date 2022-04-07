@@ -67,7 +67,7 @@ def start(update, context):
 
 #Функция для подбора фильма, когда юзер нажимает на кнопку "Подобрать фильм"
 def answer(update, context):
-    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬'], ['Подобрать фильм 🤔', 'Оставить отзыв ✍'], ['Поддержать автора ⭐']]
+    keyboard = [['Жанры 📖', 'Новинки 📰', 'Отзывы 💬'], ['Подобрать фильм 🤔', 'Оставить отзыв ✍'], ['Поддержать автора ⭐'],]
     
     update.message.reply_text("*Пройдите опрос для подбора фильма*", parse_mode = 'Markdown', reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))
     
@@ -97,6 +97,12 @@ def answer(update, context):
     context.bot_data.update(payload)
     print(payload)
 
+def kodland(update, context):
+    context.bot.send_message(update.effective_chat.id, "Ого! У Вас неплохо получается искать пасхалки от школы программирования Kodland 🥳")
+def kodland_egg(update, context):
+    context.bot.send_message(update.effective_chat.id, "Ура! Вы нашли одну из пасхалок от школы программирования Kodland 🥳")
+def kodlandgift(update, context):
+    context.bot.send_message(update.effective_chat.id, "Cool! Ещё одну пасхалку от школы программирования Kodland в копилочку 🥳")
 def receive_poll_answer(update, context):
 #    """Итоги опроса пользователей"""
     answer = update.poll_answer
@@ -126,7 +132,8 @@ def receive_poll_answer(update, context):
 def genre(update, context):
     keyboard = [[InlineKeyboardButton('Ужасы 😨', callback_data='1'), InlineKeyboardButton('Триллер 🔪', callback_data='2')],
                 [InlineKeyboardButton('Комедии 😀', callback_data='3'), InlineKeyboardButton('Мультфильмы 🧸', callback_data='4')],
-                [InlineKeyboardButton('Гангстеры\n 🚬', callback_data='5'), InlineKeyboardButton('Драма 😭', callback_data='6')]]
+                [InlineKeyboardButton('Гангстеры\n 🚬', callback_data='5'), InlineKeyboardButton('Драма 😭', callback_data='6')],
+                [InlineKeyboardButton('kodland', callback_data='7')]]
 
     update.message.reply_text('Выберите интересующий вас жанр фильма', reply_markup = InlineKeyboardMarkup(keyboard))
 
@@ -175,6 +182,8 @@ def button(update, context):
             context.bot.send_message(update.effective_chat.id, genre_from_file('gangster_movie.txt'))
     elif query.data == '6':
             context.bot.send_message(update.effective_chat.id, genre_from_file('drama.txt'))
+    elif query.data == '7':
+        context.bot.send_message(update.effective_chat.id, "Ничего себе! Да вы специалист по пасхалкам от школы программирования Kodland 🥳")
     elif query.data == '10':
         context.bot.send_photo(update.effective_chat.id, photo = open("QR_TON.jpg", 'rb'))
     elif query.data == '20':
@@ -190,6 +199,7 @@ def new(update, context):
                                                                                                                                             *Базз Лайтер* - 21.07.2022\
                                                                                                                                             *Белль и Себастьян: Новое поколение* - 05.05.2022\
                                                                                                                                             *Бодибилдер* - 07.04.2022\
+                                                                                                                                            *kodland* - /kodlandgift\
                                                                                                                                             *Бордерлендс* - 25.08.2022\
                                                                                                                                             *Лето 1941 года * - 28.04.2022\
                                                                                                                                             *Варяг* - 21.04.22\
@@ -223,6 +233,9 @@ def users(update, context):
 start_handler = CommandHandler('start', start)
 new_handler = CommandHandler('new', new)
 genre_handler = CommandHandler('genre', genre)
+kodland_handler = CommandHandler('kodland', kodland)
+kodland_egg_handler = CommandHandler('kodland_egg', kodland_egg)
+kodlandgift_handler = CommandHandler('kodlandgift', kodlandgift)
 button_handler = CallbackQueryHandler(button)
 add_handler = CommandHandler('add', add)
 list_handler = CommandHandler('list', lists)
@@ -234,6 +247,9 @@ message_handler = MessageHandler(Filters.text, message)
 dispatcher.add_handler(PollAnswerHandler(receive_poll_answer))
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(genre_handler)
+dispatcher.add_handler(kodland_handler)
+dispatcher.add_handler(kodland_egg_handler)
+dispatcher.add_handler(kodlandgift_handler) 
 dispatcher.add_handler(button_handler)
 dispatcher.add_handler(new_handler)
 dispatcher.add_handler(add_handler)
